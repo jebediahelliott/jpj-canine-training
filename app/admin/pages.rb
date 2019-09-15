@@ -14,4 +14,14 @@ ActiveAdmin.register Page do
   # end
   permit_params :title, paragraphs_attributes: [:id, :content, :_destroy]
 
+  form do |f|
+    f.inputs do
+      f.input :title
+      f.has_many :paragraphs, allow_destroy: true do |p|
+        p.input :content
+      end
+    end
+    f.actions
+  end
+
 end
