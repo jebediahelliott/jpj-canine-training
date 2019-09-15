@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_172117) do
+ActiveRecord::Schema.define(version: 2019_09_15_211833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2019_09_15_172117) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "certifications", force: :cascade do |t|
+    t.bigint "page_id"
+    t.integer "year_issued"
+    t.string "name"
+    t.string "certificate_issuer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_certifications_on_page_id"
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -55,5 +65,6 @@ ActiveRecord::Schema.define(version: 2019_09_15_172117) do
     t.index ["page_id"], name: "index_paragraphs_on_page_id"
   end
 
+  add_foreign_key "certifications", "pages"
   add_foreign_key "paragraphs", "pages"
 end

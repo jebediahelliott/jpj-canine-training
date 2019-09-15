@@ -1,4 +1,4 @@
-ActiveAdmin.register Page do
+ActiveAdmin.register Certification do
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -12,18 +12,7 @@ ActiveAdmin.register Page do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  permit_params :title,
-                paragraphs_attributes: [:id, :content, :_destroy],
-                certifications_attributes: [:id, :name, :certificate_issuer, :year_issued, :_destroy]
-
-  form do |f|
-    f.inputs do
-      f.input :title
-      f.has_many :paragraphs, allow_destroy: true do |p|
-        p.input :content
-      end
-    end
-    f.actions
-  end
+  belongs_to :page
+  permit_params :page_id, :year_issued, :name, :certificate_issuer
 
 end
