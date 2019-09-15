@@ -19,8 +19,15 @@ ActiveAdmin.register Page do
   form do |f|
     f.inputs do
       f.input :title
+    end
+    f.inputs 'Body' do
       f.has_many :paragraphs, allow_destroy: true do |p|
         p.input :content
+      end
+      f.has_many :certifications, allow_destroy: true do |c|
+        c.input :name
+        c.input :certificate_issuer
+        c.input :year_issued
       end
     end
     f.actions
