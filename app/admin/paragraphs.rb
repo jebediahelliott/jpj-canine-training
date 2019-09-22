@@ -12,7 +12,8 @@ ActiveAdmin.register Paragraph do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  belongs_to :page
-  permit_params :content, :page_id
+  belongs_to :static_page
+  permit_params :content, :static_page_id
+
 
 end

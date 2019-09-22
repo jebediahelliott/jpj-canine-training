@@ -1,4 +1,4 @@
-ActiveAdmin.register Page do
+ActiveAdmin.register StaticPage do
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -31,6 +31,19 @@ ActiveAdmin.register Page do
       end
     end
     f.actions
+  end
+
+  show do
+    attributes_table do
+      row :title
+      panel 'Paragraphs' do
+        attributes_table_for static_page.paragraphs do
+          row :content
+        end
+      end
+      row :created_at
+      row :updated_at
+    end
   end
 
 end

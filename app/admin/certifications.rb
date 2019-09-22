@@ -12,7 +12,7 @@ ActiveAdmin.register Certification do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  belongs_to :page
-  permit_params :page_id, :year_issued, :name, :certificate_issuer
+  belongs_to :static_page
+  permit_params :static_page_id, :year_issued, :name, :certificate_issuer
 
 end

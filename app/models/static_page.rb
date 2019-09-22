@@ -1,4 +1,4 @@
-class Page < ApplicationRecord
+class StaticPage < ApplicationRecord
   has_many :paragraphs
   has_many :certifications
   accepts_nested_attributes_for :certifications, allow_destroy: true

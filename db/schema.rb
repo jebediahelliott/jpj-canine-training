@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_211833) do
+ActiveRecord::Schema.define(version: 2019_09_22_135453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,13 +42,11 @@ ActiveRecord::Schema.define(version: 2019_09_15_211833) do
   end
 
   create_table "certifications", force: :cascade do |t|
-    t.bigint "page_id"
     t.integer "year_issued"
     t.string "name"
     t.string "certificate_issuer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_certifications_on_page_id"
+    t.bigint "static_page_id"
+    t.index ["static_page_id"], name: "index_certifications_on_static_page_id"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -59,12 +57,16 @@ ActiveRecord::Schema.define(version: 2019_09_15_211833) do
 
   create_table "paragraphs", force: :cascade do |t|
     t.text "content"
-    t.bigint "page_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_paragraphs_on_page_id"
+    t.bigint "static_page_id"
+    t.index ["static_page_id"], name: "index_paragraphs_on_static_page_id"
   end
 
-  add_foreign_key "certifications", "pages"
-  add_foreign_key "paragraphs", "pages"
+  create_table "static_pages", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "certifications", "static_pages"
+  add_foreign_key "paragraphs", "static_pages"
 end
