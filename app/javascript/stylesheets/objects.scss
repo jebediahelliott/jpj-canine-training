@@ -1,0 +1,17 @@
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  width: 80vw;
+  flex-direction: column;
+  margin: auto;
+}
+
+.static-page {
+  background: none;
+  width: 80%;
+  margin: 0 auto;
+  font: small-caps 1.5em/1.25em DoulosSILW;
+  margin-bottom: 3em;
+  clear: left;
+  overflow: auto;
+}

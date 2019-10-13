@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div class="static_page">
+  <h1><%= @static_page.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @static_page.title %>
-</p>
-
-<%= link_to 'Edit', edit_static_page_path(@static_page) %> |
-<%= link_to 'Back', static_pages_path %>
+  <% @static_page.paragraphs.each do |p| %>
+  <p><%= p.content %></p>
+  <% end %>
+</div>
