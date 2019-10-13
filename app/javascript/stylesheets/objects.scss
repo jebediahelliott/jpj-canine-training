@@ -20,3 +20,15 @@
   clear: left;
   overflow: auto;
 }
+
+.o-banner {
+  margin: auto;
+  height: 8em;
+  display: flex;
+  justify-content: center;
+
+  &__image {
+    object-fit: contain;
+    height: 8em;
+  }
+}

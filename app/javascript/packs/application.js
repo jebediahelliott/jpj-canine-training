@@ -18,4 +18,5 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import '../stylesheets/main.scss';
+require.context('../images', true);
 console.log('Hello World from Webpacker')
