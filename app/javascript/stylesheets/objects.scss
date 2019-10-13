@@ -1,4 +1,4 @@
-.page-container {
+.o-global-container {
   display: flex;
   min-height: 100vh;
   width: 80vw;
@@ -6,7 +6,12 @@
   margin: auto;
 }
 
-.static-page {
+.o-global-background {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.o-page-content {
   background: none;
   width: 80%;
   margin: 0 auto;
