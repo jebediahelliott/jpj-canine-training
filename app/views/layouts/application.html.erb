@@ -17,9 +17,21 @@
         </div>
         <nav>
           <ul class="c-nav">
-            <li class="c-nav__item"><a href="#" class="c-nav__item--link">About</a></li>
-            <li class="c-nav__item"><a href="#" class="c-nav__item--link">Services</a></li>
-            <li class="c-nav__item"><a href="#" class="c-nav__item--link">Contact</a></li>
+            <li class="c-nav__item">
+              <a href="#" class="c-nav__item--link">About</a>
+            </li>
+            <li class="c-nav__item o-dropdown--trigger">
+              <a href="#" class="c-nav__item--link">Services</a>
+              <div class="o-dropdown">
+                <a href="#" class="c-nav__item--link">Services</a>
+                <a href="#" class="c-nav__item--link">Services</a>
+                <a href="#" class="c-nav__item--link">Services</a>
+                <a href="#" class="c-nav__item--link">Services</a>
+              </div>
+            </li>
+            <li class="c-nav__item">
+              <a href="#" class="c-nav__item--link">Contact</a>
+            </li>
           </ul>
         </nav>
         <%= yield %>

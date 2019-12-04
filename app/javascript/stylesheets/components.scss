@@ -4,12 +4,12 @@
   align-items: center;
   height: 2.5em;
   margin: 0;
+  padding: 0;
 
   &__item {
     list-style-type: none;
 
     &--link {
-      text-decoration: none;
       color: black;
       padding: 0.25em 0;
       font: small-caps 1.5em DoulosSILW;
