@@ -2,20 +2,36 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 2.5em;
-  margin: 0;
-  padding: 0;
 
   &__item {
     list-style-type: none;
+    height: 2.5em;
 
     &--link {
       color: black;
-      padding: 0.25em 0;
+      padding: 0.25em;
       font: small-caps 1.5em DoulosSILW;
 
       &:hover {
         color: #F1CD4E;
+      }
+    }
+
+    &--dropdown-item {
+      border-bottom: 2px solid black;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &--dropdown-link {
+      color: rgb(178,56,49);
+      padding: 0.25em 0.5em;
+      font: small-caps 1.5em DoulosSILW;
+
+      &:hover {
+        color: black;
       }
     }
   }

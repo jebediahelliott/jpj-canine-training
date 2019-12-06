@@ -34,13 +34,17 @@
 }
 
 .o-dropdown {
-  margin-top: 5px;
-  background: #F1CD4E;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  display: none;
+  text-align: center;
 
-  &--trigger:hover .o-dropdown{
-    display: flex;
-    flex-direction: column;
+  &__content {
+    margin-top: 5px;
+    background: #F1CD4E;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+    display: none;
+  }
+  &:hover .o-dropdown__content {
+    display: block;
   }
 }
