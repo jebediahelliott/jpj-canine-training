@@ -3,6 +3,16 @@
   justify-content: space-around;
   align-items: center;
 
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+
+  &__mobile-icon {
+    display: none;
+    color: black;
+    padding: 0.25em;
+  }
+
   &__item {
     list-style-type: none;
     height: 2.5em;
@@ -35,5 +45,15 @@
       }
     }
   }
+}
 
+@media screen and (max-width: 500px) {
+  .c-nav__mobile-icon {
+    display: inline-block;
+
+    &:hover + .c-nav {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
