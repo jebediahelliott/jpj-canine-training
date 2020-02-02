@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'static_pages#show', {id: 1}
   resources :static_pages
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

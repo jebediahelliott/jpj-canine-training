@@ -19,3 +19,38 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 import '../stylesheets/main.scss';
 require.context('../images', true);
+
+document.addEventListener("DOMContentLoaded", function() {
+   const navIcon = document.getElementById("nav-icon");
+   const navDropdownTrigger = document.getElementById('nav-dropdown-trigger');
+   let displayMobileMenu = false;
+   let displayDropdown = false;
+   navIcon.addEventListener("click", onMobileIconClick);
+   navDropdownTrigger.addEventListener("click", showHideDropdown);
+
+   
+   function onMobileIconClick() {
+      console.log("isDisplayed: ", displayMobileMenu);
+      const navMenu = document.getElementById("nav-menu");
+      if (displayMobileMenu) {
+         navMenu.style.display = "none";
+         displayMobileMenu = false;
+      } else {
+         navMenu.style.display = "flex";
+         displayMobileMenu = true;
+      }
+   }
+
+   function showHideDropdown() {
+      const navMenu = document.getElementById("nav-dropdown");
+      if (displayDropdown) {
+         navMenu.style.display = "none";
+         displayDropdown = false;
+      } else {
+         navMenu.style.display = "flex";
+         displayDropdown = true;
+      }
+   }
+});
+
+  

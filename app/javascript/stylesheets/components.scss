@@ -1,59 +1,71 @@
 .c-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
 
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
+   @media screen and (max-width: 500px) {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+   }
 
-  &__mobile-icon {
-    display: none;
-    color: black;
-    padding: 0.25em;
-  }
-
-  &__item {
-    list-style-type: none;
-    height: 2.5em;
-
-    &--link {
+   &__mobile-icon {
+      display: none;
       color: black;
       padding: 0.25em;
-      font: small-caps 1.5em DoulosSILW;
 
-      &:hover {
-        color: #F1CD4E;
+      @media screen and (max-width: 500px) {
+         display: inline-block;
       }
-    }
+   }
 
-    &--dropdown-item {
-      border-bottom: 2px solid black;
+   &__item {
+      list-style-type: none;
+      height: 2.5em;
 
-      &:last-child {
-        border-bottom: none;
+      @media screen and (max-width: 500px) {
+         width: 100%;
+         border-bottom: 2px solid black;
+
+         &:last-child {
+         border-bottom: none;
+         }
       }
-    }
 
-    &--dropdown-link {
-      color: rgb(178,56,49);
-      padding: 0.25em 0.5em;
-      font: small-caps 1.5em DoulosSILW;
+      &--link {
+         color: black;
+         padding: 0.25em;
+         font: small-caps 1.5em DoulosSILW;
 
-      &:hover {
-        color: black;
+         &:hover {
+         color: #F1CD4E;
+         }
+
+         @media screen and (max-width: 500px) {
+            margin: auto;
+         }
       }
-    }
-  }
-}
 
-@media screen and (max-width: 500px) {
-  .c-nav__mobile-icon {
-    display: inline-block;
+      &--dropdown-item {
+         border-bottom: 2px solid black;
 
-    &:hover + .c-nav {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+         &:last-child {
+         border-bottom: none;
+         }
+
+         @media screen and (max-width: 500px) {
+            width: 100%;
+         }
+      }
+
+      &--dropdown-link {
+         color: rgb(178,56,49);
+         padding: 0.25em 0.5em;
+         font: small-caps 1.5em DoulosSILW;
+
+         &:hover {
+         color: black;
+         }
+      }
+   }
 }

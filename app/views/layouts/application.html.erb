@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JpjCanineTraining</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <%= stylesheet_pack_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  </head>
+   <head>
+      <title>JpjCanineTraining</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+      <%= stylesheet_pack_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   </head>
 
   <body>
-    <div class="o-global-container">
-      <div class="o-global-background">
-        <div class="o-banner">
-          <img src="<%= asset_pack_path 'media/images/output-onlinepngtools.png' %>" alt="Logo" class="o-banner__image" />
-        </div>
-        <nav>
-          <i class="fas fa-bars fa-2x c-nav__mobile-icon"></i>
-          <ul class="c-nav">
-            <li class="c-nav__item">
-              <a href="#" class="c-nav__item--link">About</a>
-            </li>
-            <li class="c-nav__item o-dropdown">
-              <a href="#" class="c-nav__item--link">Services</a>
-              <ul class="o-dropdown__content">
-                <li class="c-nav__item--dropdown-item">
-                  <a href="#" class="c-nav__item--dropdown-link">jal;dkjl;ajlkdf;jsl;kdfj</a>
-                </li>
-                <li class="c-nav__item--dropdown-item">
-                  <a href="#" class="c-nav__item--dropdown-link">Services</a>
-                </li>
-                <li class="c-nav__item--dropdown-item">
-                  <a href="#" class="c-nav__item--dropdown-link">Services</a>
-                </li>
-                <li class="c-nav__item--dropdown-item">
-                  <a href="#" class="c-nav__item--dropdown-link">Services</a>
-                </li>
-              </ul>
-            </li>
-            <li class="c-nav__item">
-              <a href="#" class="c-nav__item--link">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <%= yield %>
+      <div class="o-global-container">
+         <div class="o-global-background">
+            <div class="o-banner">
+               <img src="<%= asset_pack_path 'media/images/output-onlinepngtools.png' %>" alt="Logo" class="o-banner__image" />
+            </div>
+         <nav>
+            <div class="c-nav__mobile-icon" id="nav-icon">
+               <i class="fas fa-bars fa-2x"></i>
+            </div>
+            <ul class="c-nav" id="nav-menu">
+               <li class="c-nav__item">
+               <a href="/" class="c-nav__item--link">About</a>
+               </li>
+               <li class="c-nav__item o-dropdown">
+                  <span class="c-nav__item--link" id="nav-dropdown-trigger">Services</span>
+                  <ul class="o-dropdown__content" id="nav-dropdown">
+                     <li class="c-nav__item--dropdown-item">
+                        <a href="/" class="c-nav__item--dropdown-link">jal;dkjl;ajlkdf;jsl;kdfj</a>
+                     </li>
+                     <li class="c-nav__item--dropdown-item">
+                        <a href="/" class="c-nav__item--dropdown-link">Services</a>
+                     </li>
+                     <li class="c-nav__item--dropdown-item">
+                        <a href="/" class="c-nav__item--dropdown-link">Services</a>
+                     </li>
+                     <li class="c-nav__item--dropdown-item">
+                        <a href="/" class="c-nav__item--dropdown-link">Services</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="c-nav__item">
+               <a href="/" class="c-nav__item--link">Contact</a>
+               </li>
+            </ul>
+         </nav>
+         <%= yield %>
+         </div>
       </div>
-    </div>
-  </body>
+   </body>
 </html>
