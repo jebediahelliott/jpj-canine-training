@@ -16,37 +16,45 @@
             <div class="o-banner">
                <img src="<%= asset_pack_path 'media/images/output-onlinepngtools.png' %>" alt="Logo" class="o-banner__image" />
             </div>
-         <nav>
-            <div class="c-nav__mobile-icon" id="nav-icon">
-               <i class="fas fa-bars fa-2x"></i>
+            <nav>
+               <div class="c-nav__mobile-icon" id="nav-icon">
+                  <i class="fas fa-bars fa-2x"></i>
+               </div>
+               <ul class="c-nav" id="nav-menu">
+                  <li class="c-nav__item">
+                  <a href="/" class="c-nav__item--link">About</a>
+                  </li>
+                  <li class="c-nav__item c-dropdown">
+                     <span class="c-nav__item--link" id="nav-dropdown-trigger">Services</span>
+                     <ul class="c-dropdown__content" id="nav-dropdown">
+                        <li class="c-nav__item--dropdown-item">
+                           <a href="/" class="c-nav__item--dropdown-link">jal;dkjl;ajlkdf;jsl;kdfj</a>
+                        </li>
+                        <li class="c-nav__item--dropdown-item">
+                           <a href="/" class="c-nav__item--dropdown-link">Services</a>
+                        </li>
+                        <li class="c-nav__item--dropdown-item">
+                           <a href="/" class="c-nav__item--dropdown-link">Services</a>
+                        </li>
+                        <li class="c-nav__item--dropdown-item">
+                           <a href="/" class="c-nav__item--dropdown-link">Services</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="c-nav__item">
+                  <a href="/" class="c-nav__item--link">Contact</a>
+                  </li>
+               </ul>
+            </nav>
+            <%= yield %>
+            <div class="o-footer">
+               <div class="o-footer__content">
+                  <span>&copy; John P. Jones Canine Training</span>
+                  <span>814-769-1883</span>
+                  <span><a href="mailto:jpjcaninetraining@gmail.com">jpjcaninetraining@gmail.com</a></span>
+                  <a id="faceLink" href="https://www.facebook.com/John-P-Jones-Canine-Training-270551002841/"><i class="fab fa-facebook-square fa-2x"></i></a>
+               </div>
             </div>
-            <ul class="c-nav" id="nav-menu">
-               <li class="c-nav__item">
-               <a href="/" class="c-nav__item--link">About</a>
-               </li>
-               <li class="c-nav__item o-dropdown">
-                  <span class="c-nav__item--link" id="nav-dropdown-trigger">Services</span>
-                  <ul class="o-dropdown__content" id="nav-dropdown">
-                     <li class="c-nav__item--dropdown-item">
-                        <a href="/" class="c-nav__item--dropdown-link">jal;dkjl;ajlkdf;jsl;kdfj</a>
-                     </li>
-                     <li class="c-nav__item--dropdown-item">
-                        <a href="/" class="c-nav__item--dropdown-link">Services</a>
-                     </li>
-                     <li class="c-nav__item--dropdown-item">
-                        <a href="/" class="c-nav__item--dropdown-link">Services</a>
-                     </li>
-                     <li class="c-nav__item--dropdown-item">
-                        <a href="/" class="c-nav__item--dropdown-link">Services</a>
-                     </li>
-                  </ul>
-               </li>
-               <li class="c-nav__item">
-               <a href="/" class="c-nav__item--link">Contact</a>
-               </li>
-            </ul>
-         </nav>
-         <%= yield %>
          </div>
       </div>
    </body>

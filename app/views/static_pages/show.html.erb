@@ -1,7 +1,18 @@
 <div class="o-page-content">
-  <h1><%= @static_page.title %></h1>
+   <h1><%= @static_page.title %></h1>
 
-  <% @static_page.paragraphs.each do |p| %>
-  <p><%= p.content %></p>
-  <% end %>
+   <% @static_page.paragraphs.each do |p| %>
+      <p><%= p.content %></p>
+   <% end %>
+
+   <% if @static_page.certifications %>
+      <h3>Training Certifications</h3>
+      <ul>
+         <% @static_page.certifications.each do |c| %>
+            <li>
+               <%= "#{c.name}: #{c.certificate_issuer}, #{c.year_issued}" %>
+            </li>
+         <% end %>
+      </ul>
+   <% end %>
 </div>

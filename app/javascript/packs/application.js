@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
    
    function onMobileIconClick() {
-      console.log("isDisplayed: ", displayMobileMenu);
       const navMenu = document.getElementById("nav-menu");
       if (displayMobileMenu) {
          navMenu.style.display = "none";
@@ -42,13 +41,15 @@ document.addEventListener("DOMContentLoaded", function() {
    }
 
    function showHideDropdown() {
-      const navMenu = document.getElementById("nav-dropdown");
-      if (displayDropdown) {
-         navMenu.style.display = "none";
-         displayDropdown = false;
-      } else {
-         navMenu.style.display = "flex";
-         displayDropdown = true;
+      if (window.innerWidth <= 500) {
+         const navMenu = document.getElementById("nav-dropdown");
+         if (displayDropdown) {
+            navMenu.style.display = "none";
+            displayDropdown = false;
+         } else {
+            navMenu.style.display = "flex";
+            displayDropdown = true;
+         }
       }
    }
 });
