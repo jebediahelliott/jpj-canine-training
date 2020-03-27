@@ -5,7 +5,7 @@
       <p><%= p.content %></p>
    <% end %>
 
-   <% if @static_page.certifications %>
+   <% if @static_page.certifications.length > 0 %>
       <h3>Training Certifications</h3>
       <ul>
          <% @static_page.certifications.each do |c| %>
